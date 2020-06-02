@@ -360,7 +360,7 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
          //                                               options:nil];
       } else if (barcodes != nil) {
         //Iterate through barcodes.
-        dispatch_sync(dispatch_get_main_queue(), ^{
+        //dispatch_sync(dispatch_get_main_queue(), ^{
             for (FIRVisionBarcode *barcode in barcodes) {
                 NSLog(@"Barcode value: %@", barcode.rawValue);
                 
@@ -394,7 +394,7 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
                     break;
                 }
             }
-        });
+        //});
       }
     }];
     
