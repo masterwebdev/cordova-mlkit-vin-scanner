@@ -95,7 +95,8 @@
     //If barcodeFormats == 0 then process as a VIN with VIN verifications.
     if([_barcodeFormats  isEqual: @0]) {
         NSLog(@"Running VIN style");
-        formats = @(FIRVisionBarcodeFormatCode39|FIRVisionBarcodeFormatDataMatrix);
+        formats = @(FIRVisionBarcodeFormatCode39|FIRVisionBarcodeFormatDataMatrix|FIRVisionBarcodeFormatQRCode);
+        //formats = @(FIRVisionBarcodeFormatAll);
     } else if([_barcodeFormats  isEqual: @1234]) {
         
     } else {
@@ -106,7 +107,7 @@
     // Initialize barcode detector.
     FIRVisionBarcodeDetectorOptions *options =
     [[FIRVisionBarcodeDetectorOptions alloc]
-     initWithFormats: FIRVisionBarcodeFormatCode39 | FIRVisionBarcodeFormatDataMatrix];
+     initWithFormats: FIRVisionBarcodeFormatCode39 | FIRVisionBarcodeFormatDataMatrix | FIRVisionBarcodeFormatQRCode];
     
     self.vision = [FIRVision vision];
     self.barcodeDetector = [self.vision barcodeDetectorWithOptions:options];

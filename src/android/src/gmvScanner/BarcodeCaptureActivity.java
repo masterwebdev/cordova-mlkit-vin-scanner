@@ -227,7 +227,7 @@ public final class BarcodeCaptureActivity extends AppCompatActivity implements B
         int detectionType = 0;
 
         if(DetectionTypes == 0) {
-            detectionType = (Barcode.CODE_39|Barcode.DATA_MATRIX);
+            detectionType = (Barcode.CODE_39|Barcode.DATA_MATRIX|Barcode.QR_CODE);
         } else if(DetectionTypes == 1234) {
 
         } else {
